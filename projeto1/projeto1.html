@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+     var v = [] ;
+      var n;
+      var i;
+       var ri=" ";
+        var rp=" ";
+
+      $("#adicionar").click (function () {
+       n= parseInt($("#n1").val());
+       v.push (n);
+       alert ("o número foi adicionado com sucesso!")
+       $("#n1"). val("");
+    
+      });
+
+        $("#todos").click (function () {
+     v.length
+    alert ("os numeros adicionados até agora são: " + v);
+       
+      });
+
+          $("#pares").click (function () {
+            var rp=" ";
+     for (var i=0; i<v.length; i++) { 
+          if (v[i]%2===0) {
+            rp+= v[i] + ",";
+             $("p") .html (rp);
+          } else {
+           $("p") .html ("não há números pares");
+          }
+     
+     }
+          });
+
+            $("#impares").click (function () {
+                var ri=" ";
+     for (var i=0; i<v.length; i++) { 
+          if (v[i]%2!==0) {
+             ri+= v[i] + ",";
+             $("p") .html (ri);
+          }
+     }
+            });
+          });
+   
+    </script>
+</head>
+<body> <br>
+    <input type="text" id="n1">
+    <button id="adicionar" type="submit"> adicionar: </button> <br> <br>
+     <button id="todos" type="submit"> mostrar todos: </button> 
+      <button id="pares" type="submit"> pares: </button>
+       <button id="impares" type="submit"> impares: </button> 
+      <br> 
+       <p> </p>
+
+</body>
+</html>
